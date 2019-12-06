@@ -8,7 +8,7 @@ app.use(bodyParser.json())
 
 //POST endpoint
 app.post('/messages', (req, res) => {
-    console.log("This is the post req.body:", req.body)
+    console.log("This is the post req.body.text:", req.body.text)
     res.json({
         message: "Message received loud and clear"
     })
