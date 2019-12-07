@@ -1,10 +1,17 @@
 const Sequelize = require('sequelize')
-const db = require('../db')
+const db = require('../sequelize-rest')
 
 const Movie = db.define(
-    'movie', {
+    'movie', 
+    {
         title: Sequelize.TEXT,
         yearOfRelease: Sequelize.NUMBER,
-        synopsis: Sequelize.TEXT
+        synopsis: Sequelize.TEXT,
     }
 );
+
+module.exports = Movie
+
+        // title: { Sequelize.TEXT}
+        // yearOfRelease: Sequelize.NUMBER,
+        // synopsis: Sequelize.TEXT
