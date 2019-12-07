@@ -8,10 +8,13 @@ let reqCount = 0
 //Middelware
 
 const limitCallsMiddleware = (req, res, next) => {
-    reqCount++
+    if(!req.body.text || req.body.text === '') {
+        res.status(400).end()
+    }
     if(reqCount > 5){
         res.status(429).end()
     }else{
+        reqCount++
         next()
     }
 };
