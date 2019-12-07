@@ -4,13 +4,9 @@ const databaseUrl = process.env.DATABASE_URL || 'postgres://postgres:helloworld@
 
 const db = new Sequelize(databaseUrl)
 
-db  .sync()
+db.sync()
     .then(() => console.log("The database is up"))
     .catch(err => console.error(err))
 
 
 module.exports = db
-
-//EXPRESS APP
-//TEST DATA
-//PAGINATION
