@@ -4,7 +4,7 @@ const Movie = require('./model')
 const router = new Router()
 router.post('/movies', (req, res, next) => {Movie
     .create(req.body)
-    .then(newMovie => res.json(newMovie))
+    .then(newMovie => res.send(newMovie))
     .catch(err => next(err))
 });
 

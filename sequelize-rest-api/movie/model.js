@@ -3,9 +3,18 @@ const db = require('../sequelize-rest')
 
 const Movie = db.define( 'movies', 
     {
-        title: Sequelize.TEXT,
-        yearOfRelease: Sequelize.INTEGER,
-        synopsis: Sequelize.TEXT
+        title: {
+            type: Sequelize.TEXT,
+            field: 'movie_title'
+        },
+        yearOfRelease: {
+            type: Sequelize.INTEGER,
+            field: 'year_of_release'
+        },
+        synopsis: {
+            type: Sequelize.TEXT,
+            field: 'synopsis'
+        }
     });
 
 module.exports = Movie
