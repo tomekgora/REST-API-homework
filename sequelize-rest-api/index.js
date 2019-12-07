@@ -7,10 +7,11 @@ const jsonParser = bodyParser.json()
 const app = express()
 port = process.env.PORT || 4000
 
-// const parserMiddleware = bodyParser.json()
+// Middleware
+app.use(moviesRouter)
+app.use(jsonParser)
 
 app.listen(port, () =>
     console.log(`sequelize-rest app listening on port: ${port}`))
 
-app.use(moviesRouter)
-app.use(jsonParser)
+
