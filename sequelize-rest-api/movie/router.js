@@ -4,13 +4,22 @@ const Movie = require('./model')
 const router = new Router()
 router.post('/movies', (req, res, next) => {Movie
     .create(req.body)
-    .then(newMovie => res.json(newMovie))
+    .then(newMovie => res.send(newMovie))
     .catch(err => next(err))
 });
 
-router.get('/movies/', (req, res, next) => {Movie
-    .findAll()
-    .then(movieList => res.json(movieList))
+router.get('/movies', (req, res, next) => {
+    const limit = req.query.limit || 10
+    const offset = req.query.offset || 0
+    Movie
+    .findAndCountAll({
+        limit, offset
+    })
+    .then(result => res.json(
+        {
+            movieList: result.rows, 
+            total: result.count
+        }))
     .catch(err => next(err))
 });
 

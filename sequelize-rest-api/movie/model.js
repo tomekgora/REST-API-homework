@@ -1,10 +1,10 @@
 const Sequelize = require('sequelize')
 const db = require('../sequelize-rest')
 
-const Movie = db.define( 'movie', 
+const Movie = db.define( 'movies', 
     {
         title: Sequelize.TEXT,
-        yearofRelease: Sequelize.INTEGER,
+        yearOfRelease: Sequelize.INTEGER,
         synopsis: Sequelize.TEXT
     });
 
