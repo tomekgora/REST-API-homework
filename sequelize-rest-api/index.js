@@ -1,6 +1,6 @@
 const express = require('express')
-const app = express()
 const Movie = require('./movie/model')
+const app = express()
 port = process.env.PORT || 4000
 
 // const parserMiddleware = bodyParser.json()
