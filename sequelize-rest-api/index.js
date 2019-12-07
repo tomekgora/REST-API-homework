@@ -10,6 +10,8 @@ port = process.env.PORT || 4000
 // Middleware
 app.use(moviesRouter)
 app.use(jsonParser)
+app.use(bodyParser.urlencoded({ extended: false })
+)
 
 app.listen(port, () =>
     console.log(`sequelize-rest app listening on port: ${port}`))
