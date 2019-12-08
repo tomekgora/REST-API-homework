@@ -3,11 +3,11 @@ const Movie = require('./movie/model')
 const exampleData = require('./data/example-data')
 const databaseUrl = process.env.DATABASE_URL || 'postgres://postgres:hello@localhost:5432/postgres'
 
-function loadData() {
-    exampleData.map(movie => {
-        Movie.create(movie)
-    })
-};
+// function loadData() {
+//     exampleData.map(movie => {
+//         Movie.create(movie)
+//     })
+// };
 
 const db = new Sequelize(databaseUrl)
 
