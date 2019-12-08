@@ -8,7 +8,7 @@ const db = new Sequelize(databaseUrl)
 
 db.sync()
     .then(() => console.log("The database is up"))
-    .then(() => example.Data.map((movie) => Movie.create(movie)))
+    // .then(() => example.Data.map((movie) => Movie.create(movie)))
     .catch(err => next(err))
 
 // Movie.create({title:'titanic', yearOfRelease:1996, synopsis:'not bad'})
