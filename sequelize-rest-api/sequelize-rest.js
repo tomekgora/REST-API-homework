@@ -16,7 +16,7 @@ db.sync()
     // .then(() => example.Data.map((movie) => Movie.create(movie)))
     // thos ,ade np semse I need to use .finally()
     .catch(err => next(err))
-    .finally(loadData())
+    // .finally(loadData())
 
 // Movie.create({title:'titanic', yearOfRelease:1996, synopsis:'not bad'})
 //     .then(movie => {})
